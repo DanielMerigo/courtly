@@ -15,7 +15,9 @@ defmodule MyApp.Repo.Migrations.CreateBookings do
 
     create index(:bookings, [:client_id])
     create index(:bookings, [:court_id])
+
     create unique_index(:bookings, [:court_id, :start_date, :end_date],
-      name: :unique_court_booking)
+             name: :unique_court_booking
+           )
   end
 end

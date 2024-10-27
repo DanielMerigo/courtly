@@ -28,7 +28,6 @@ defmodule CourtlyWeb.UserRegistrationLive do
         method="post"
       >
         <.error :if={@check_errors}>
-          <%= IO.inspect(@form.errors) %>
           Oops, something went wrong! Please check the errors below.
         </.error>
 

@@ -32,7 +32,15 @@ defmodule Courtly.Courts.Court do
       :state,
       :owner_id
     ])
-    |> validate_required([:title, :default_price_in_cents, :latitude, :longitude, :city, :state, :owner_id])
+    |> validate_required([
+      :title,
+      :default_price_in_cents,
+      :latitude,
+      :longitude,
+      :city,
+      :state,
+      :owner_id
+    ])
     |> foreign_key_constraint(:owner_id)
   end
 end
