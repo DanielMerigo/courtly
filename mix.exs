@@ -11,7 +11,7 @@ defmodule Courtly.MixProject do
       aliases: aliases(),
       test_coverage: [
         summary: [
-          threshold: 78
+          threshold: 82
         ]
       ],
       deps: deps()

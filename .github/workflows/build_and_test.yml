@@ -66,4 +66,4 @@ jobs:
     - name: Run tests
       env:
         MIX_ENV: test
-      run: mix test
+      run: mix test --warnings-as-errors --cover --trace
