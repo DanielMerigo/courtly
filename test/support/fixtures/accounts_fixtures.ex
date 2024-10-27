@@ -5,11 +5,14 @@ defmodule Courtly.AccountsFixtures do
   """
 
   def unique_user_email, do: "user#{System.unique_integer()}@example.com"
-  def valid_user_password, do: "hello world!"
+  def valid_user_password, do: "valid_password!!"
 
   def valid_user_attributes(attrs \\ %{}) do
     Enum.into(attrs, %{
       email: unique_user_email(),
+      first_name: "Daniel",
+      last_name: "Merigo",
+      phone: "49999992227",
       password: valid_user_password()
     })
   end
