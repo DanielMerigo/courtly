@@ -17,7 +17,7 @@ defmodule CourtlyWeb.CoreComponents do
   use Phoenix.Component
 
   alias Phoenix.LiveView.JS
-  import CourtlyWeb.Gettext
+  use Gettext, backend: CourtlyWeb.Gettext
 
   @doc """
   Renders a modal.

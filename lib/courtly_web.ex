@@ -43,7 +43,7 @@ defmodule CourtlyWeb do
         layouts: [html: CourtlyWeb.Layouts]
 
       import Plug.Conn
-      import CourtlyWeb.Gettext
+      use Gettext, backend: CourtlyWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -85,7 +85,7 @@ defmodule CourtlyWeb do
       import Phoenix.HTML
       # Core UI components and translation
       import CourtlyWeb.CoreComponents
-      import CourtlyWeb.Gettext
+      use Gettext, backend: CourtlyWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
