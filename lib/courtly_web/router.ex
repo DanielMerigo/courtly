@@ -68,13 +68,18 @@ defmodule CourtlyWeb.Router do
       on_mount: [{CourtlyWeb.UserAuth, :ensure_authenticated}] do
       live "/users/settings", UserSettingsLive, :edit
       live "/users/settings/confirm_email/:token", UserSettingsLive, :confirm_email
+      live "/courts", Client.CourtsLive.Index, :index
+
+      scope "/admin", Admin do
+        live "/courts", CourtsLive.Index, :index
+      end
     end
   end
 
   scope "/", CourtlyWeb do
     pipe_through [:browser]
 
-    delete "/users/log_out", UserSessionController, :delete
+    get "/users/log_out", UserSessionController, :delete
 
     live_session :current_user,
       on_mount: [{CourtlyWeb.UserAuth, :mount_current_user}] do

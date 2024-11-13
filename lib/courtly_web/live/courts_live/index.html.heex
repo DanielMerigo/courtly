@@ -1,0 +1,7 @@
+<div>
+  <%= if @current_user.is_admin? do %>
+    <p>Unauthorized</p>
+  <% else %>
+    <h1>Find the perfect court</h1>
+  <% end %>
+</div>

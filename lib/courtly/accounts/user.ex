@@ -7,6 +7,7 @@ defmodule Courtly.Accounts.User do
     field :last_name, :string
     field :phone, :string
     field :email, :string
+    field :is_admin?, :boolean, default: false
     field :password, :string, virtual: true, redact: true
     field :hashed_password, :string, redact: true
     field :current_password, :string, virtual: true, redact: true
@@ -40,7 +41,7 @@ defmodule Courtly.Accounts.User do
   """
   def registration_changeset(user, attrs, opts \\ []) do
     user
-    |> cast(attrs, [:email, :password, :first_name, :last_name, :phone])
+    |> cast(attrs, [:email, :password, :first_name, :last_name, :phone, :is_admin?])
     |> validate_email(opts)
     |> validate_password(opts)
   end
